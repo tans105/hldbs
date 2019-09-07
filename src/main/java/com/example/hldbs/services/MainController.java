@@ -10,6 +10,6 @@ public class MainController {
 
     @GetMapping("/users")
     public String welcomeUser(@RequestParam(name = "name", required = false, defaultValue = "Java Fan") String name) {
-        return "Tanmay";
+        return name;
     }
 }
