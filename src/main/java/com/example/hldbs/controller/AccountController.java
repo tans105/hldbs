@@ -19,7 +19,6 @@ public class AccountController {
         boolean isCustomerEligibleForLoan = false;
         AccountService service = new AccountService();
         isCustomerEligibleForLoan = service.isUserEligibleForPreApprovedLoan(customerId);
-
         return isCustomerEligibleForLoan;
     }
 

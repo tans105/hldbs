@@ -1,14 +1,16 @@
 package com.example.hldbs.dao;
 
+import com.example.hldbs.utils.Utility;
 import com.example.hldbs.webentity.PropertiesRequest;
 import com.example.hldbs.webentity.Property;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-public class AccountDAO{
+public class AccountDAO {
 
-    public boolean isUserEligibleForPreApprovedLoan(String customerId){
+    public boolean isUserEligibleForPreApprovedLoan(String customerId) {
+        if (Utility.isNullOrEmpty(customerId)) return false;
         //TODO
         return true;
     }
