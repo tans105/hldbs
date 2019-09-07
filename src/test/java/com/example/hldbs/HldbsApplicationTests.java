@@ -2,6 +2,7 @@ package com.example.hldbs;
 
 import com.example.hldbs.controller.AccountController;
 import com.example.hldbs.controller.AuthController;
+import com.example.hldbs.webentity.EMI;
 import com.example.hldbs.webentity.GenericResponse;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,11 +31,20 @@ public class HldbsApplicationTests {
 
     @Test
     public void approvedLoanIndicator() {
-      AccountController controller = new AccountController();
-      boolean isUserEligible = controller.getApprovedLoanIndicator("1234");
-      assert isUserEligible;
-      isUserEligible = controller.getApprovedLoanIndicator(null);
-      assert !isUserEligible;
+        AccountController controller = new AccountController();
+        boolean isUserEligible = controller.getApprovedLoanIndicator("1234");
+        assert isUserEligible;
+        isUserEligible = controller.getApprovedLoanIndicator(null);
+        assert !isUserEligible;
+    }
+
+    @Test
+    public void testEmiTenure() {
+        AccountController controller = new AccountController();
+        EMI emi = new EMI();
+        emi.setTenure(6);
+        emi.setAmount(10000d);
+        assert controller.getEMIForTenure(emi) == 10000d;
     }
 
 
